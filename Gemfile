@@ -33,6 +33,7 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
+gem 'squeel'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.0"

@@ -1,0 +1,9 @@
+"zh-TW":
+  activerecord:
+    models:
+      dict: 字/辭典
+      entry: 詞條
+      heteronym: 發音方式
+      definition: 辭義
+      user: 使用者
+

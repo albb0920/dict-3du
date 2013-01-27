@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
       end
     else
       respond_to do |format|
-        format.json { render json: {word: params[:keyword], error: '查無此辭'} }
+        format.json { render json: { dict: {word: params[:keyword], error: '查無此辭'}} }
       end
     end
   end

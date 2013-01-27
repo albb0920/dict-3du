@@ -1,4 +1,4 @@
 class Heteronym < ActiveRecord::Base
-  belongs_to :word
-  attr_accessible :bopomofo, :bopomofo2, :pinyin
+  belongs_to :entry
+  attr_accessible :bopomofo, :bopomofo2, :pinyin, :entry_id
 end

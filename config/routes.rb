@@ -1,6 +1,8 @@
 Dict3du::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+
+  root to: 'entries#index'
   devise_for :users
 
   match '/dict/:keyword(.format)' => 'entries#match', dict_id: Rails.application.config.dict_id

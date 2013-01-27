@@ -1,4 +1,8 @@
 Dict3du::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+
   match '/dict/:keyword(.format)' => 'entries#match'
 end
 # The priority is based upon order of creation:

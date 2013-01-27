@@ -34,5 +34,10 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
+group :development, :test do
+  gem "rspec-rails", "~> 2.0"
+  gem 'debugger'
+  gem 'factory_girl_rails'
+end
+
+gem 'debugger'

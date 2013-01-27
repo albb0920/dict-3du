@@ -1,7 +1,9 @@
 #encoding: UTF-8
 class EntriesController < ApplicationController
+  load_resource :dict
+
   def match
-    entry = Entry.find_by_title(params[:keyword])
+    entry = @dict.entries.find_by_title(params[:keyword])
     if entry
       respond_to do |format|
        format.json do

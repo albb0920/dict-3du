@@ -3,7 +3,9 @@ Dict3du::Application.routes.draw do
 
   devise_for :users
 
-  match '/dict/:keyword(.format)' => 'entries#match'
+  match '/dict/:keyword(.format)' => 'entries#match', dict_id: Rails.application.config.dict_id
+  match '/idiom/:keyword(.format)' => 'entries#match', dict_id: Rails.application.config.idiom_id
+
 end
 # The priority is based upon order of creation:
 # first created -> highest priority.

@@ -58,5 +58,9 @@ module Dict3du
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # custom config
+    config.dict_id = 1
+    config.idiom_id = 2
   end
 end

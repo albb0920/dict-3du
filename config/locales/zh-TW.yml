@@ -2,8 +2,29 @@
   activerecord:
     models:
       dict: 字/辭典
-      entry: 詞條
+      entry: 辭條
       heteronym: 發音方式
       definition: 辭義
       user: 使用者
-
+    attributes:
+      dict:
+        name: 名稱
+        type: 類型
+      entry:
+        title: 字詞
+        radical: 部首
+        stroke_count: 總筆劃數
+        non_radical_stroke_count: 無部首筆劃數
+        dict: 字/辭典
+      heteronym:
+        entry: 辭條
+        bopomofo: 注音
+        Bopomofo2: 國音二式
+        pinyin: 漢語拼音
+      definition:
+        type: 詞性
+        def: 定義
+        example: 例句
+        synonyms: 相似詞
+        antonyms: 反義詞
+        source: 出典

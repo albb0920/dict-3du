@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127051305) do
+ActiveRecord::Schema.define(:version => 20130127060159) do
 
   create_table "definitions", :force => true do |t|
     t.integer  "heteronym_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20130127051305) do
   add_index "entries", ["dict_id"], :name => "index_entries_on_dict_id"
 
   create_table "heteronyms", :force => true do |t|
-    t.integer  "word_id"
+    t.integer  "entry_id"
     t.string   "bopomofo"
     t.string   "bopomofo2"
     t.string   "pinyin"
@@ -56,6 +56,6 @@ ActiveRecord::Schema.define(:version => 20130127051305) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "heteronyms", ["word_id"], :name => "index_heteronyms_on_word_id"
+  add_index "heteronyms", ["entry_id"], :name => "index_heteronyms_on_word_id"
 
 end

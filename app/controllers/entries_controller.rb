@@ -4,16 +4,14 @@ class EntriesController < ApplicationController
 
   def match
     entry = @dict.entries.find_by_title(params[:keyword])
-    if entry
-      respond_to do |format|
-       format.json do
-         render json: entry
-       end
-      end
-    else
-      respond_to do |format|
-        format.json { render json: { dict: {word: params[:keyword], error: '查無此辭'}} }
-      end
+    json = {@dict.type_string => (entry ?
+    entry.as_json :
+    {word: params[:keyword], error: '查無此辭'}) }
+
+    respond_to do |format|
+     format.json do
+       render json: json
+     end
     end
   end
 end

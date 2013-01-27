@@ -11,22 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127062845) do
+ActiveRecord::Schema.define(:version => 20130127071557) do
 
   create_table "definitions", :force => true do |t|
     t.integer  "heteronym_id"
     t.integer  "type"
     t.string   "def"
     t.string   "example"
-    t.integer  "see_entry_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "synonyms"
     t.string   "antonyms"
+    t.string   "link_type"
+    t.integer  "link_id"
   end
 
   add_index "definitions", ["heteronym_id"], :name => "index_definations_on_heteronym_id"
-  add_index "definitions", ["see_entry_id"], :name => "index_definations_on_see_entry_id"
 
   create_table "dicts", :force => true do |t|
     t.string   "name"

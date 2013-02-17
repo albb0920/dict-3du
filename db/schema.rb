@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130217075443) do
+ActiveRecord::Schema.define(:version => 20130217120140) do
 
   create_table "definitions", :force => true do |t|
     t.integer  "heteronym_id"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(:version => 20130217075443) do
   end
 
   add_index "heteronyms", ["entry_id"], :name => "index_heteronyms_on_word_id"
+
+  create_table "quotes", :force => true do |t|
+    t.string   "source"
+    t.string   "content"
+    t.integer  "definition_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

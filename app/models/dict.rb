@@ -1,6 +1,6 @@
 class Dict < ActiveRecord::Base
   attr_accessible :name, :type
-  has_many :entries
+  has_many :entries, dependent: :destroy
   self.inheritance_column = nil
 
   TYPE_CHAR_DICT   = 0

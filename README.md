@@ -10,7 +10,7 @@
        目前 api.3du.tw 上面是用 nginx + unicorn，不過其實怎麼弄都 OK
 
 2. 下載這份 source code
-       git clone https://github.com/albb0920/dict-3du.git
+        git clone https://github.com/albb0920/dict-3du.git
 
 3. 準備環境
 

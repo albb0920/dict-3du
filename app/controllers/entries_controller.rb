@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
      format.json do
-       render json: json
+       render json: json, callback: params[:callback]
      end
     end
   end

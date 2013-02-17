@@ -42,9 +42,11 @@ group :development, :test do
   gem "rspec-rails", "~> 2.0"
   gem 'debugger'
   gem 'factory_girl_rails'
-  gem 'ruby-progressbar'
   gem 'database_cleaner'
 end
+
+#TODO: maybe a group for this
+gem 'ruby-progressbar'
 
 gem 'thin'
 gem 'debugger'

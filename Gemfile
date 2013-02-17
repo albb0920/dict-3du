@@ -42,6 +42,8 @@ group :development, :test do
   gem "rspec-rails", "~> 2.0"
   gem 'debugger'
   gem 'factory_girl_rails'
+  gem 'ruby-progressbar'
+  gem 'database_cleaner'
 end
 
 gem 'thin'

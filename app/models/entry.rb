@@ -18,4 +18,8 @@ class Entry < ActiveRecord::Base
     )
     super(options)
   end
+
+  def self.index
+    select('title').collect(&:title)
+  end
 end

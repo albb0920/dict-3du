@@ -3,7 +3,14 @@ class EntriesController < ApplicationController
   load_resource :dict
 
   def index
-    render text: "API endpoint at <br> /dict/(word).json <br> or <br> /idiom/(word).json"
+    respond_to do |format|
+      format.json do
+        render json: Entry.index, callback: params[:callback]
+      end
+      format.html do
+        render text: "API endpoint at <br> /dict/(word).json <br> or <br> /idiom/(word).json"
+      end
+    end
   end
 
   def match

@@ -5,6 +5,7 @@ Dict3du::Application.routes.draw do
   root to: 'entries#index'
   devise_for :users
 
+  match '/dict.json' => 'entries#index', format: :json
   match '/dict/:keyword(.format)' => 'entries#match', dict_id: Rails.application.config.dict_id
   match '/idiom/:keyword(.format)' => 'entries#match', dict_id: Rails.application.config.idiom_id
 

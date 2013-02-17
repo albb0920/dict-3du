@@ -21,10 +21,9 @@ puts "將從 #{KCWU_JSON} 匯入教育部國語辭典\n"
 ProgressBar::Formatter::DEFAULT_FORMAT_STRING = '%t |%B| %c/%C(%p%%) %e'
 
 dl_progress = nil, out_thread = nil, json = nil
-#pen('http://kcwu.csie.org/~kcwu/moedict/dict-revised.json.bz2', 'rb',
-#    content_length_proc: ->(t){ dl_progress = ProgressBar.create(total:t, title: 'Download') },
-#    progress_proc: ->(s){ dl_progress.progress = s if progress_bar }) do |f|
-File.open('/home/albb0920/dict-revised.json.bz2','rb') do |f|
+open('http://kcwu.csie.org/~kcwu/moedict/dict-revised.json.bz2', 'rb',
+    content_length_proc: ->(t){ dl_progress = ProgressBar.create(total:t, title: 'Download') },
+    progress_proc: ->(s){ dl_progress.progress = s if progress_bar }) do |f|
   Open3.pipeline_rw('bzcat') do |pipe_in, pipe_out|
     pipe_in.set_encoding('ASCII-8BIT') # rails makes IO default encoding to UTF-8, WTF?
 
